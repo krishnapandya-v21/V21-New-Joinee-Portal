@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+uploads/
+employee_onboarding.db
+.env
