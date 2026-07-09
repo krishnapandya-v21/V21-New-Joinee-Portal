@@ -18,7 +18,7 @@ CORS(app)
 DATABASE = 'employee_onboarding.db'
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'pdf', 'jpg', 'jpeg', 'png', 'gif'}
-MAX_FILE_SIZE = 5 * 1024 * 1024
+MAX_FILE_SIZE = 25 * 1024 * 1024
 
 # Create uploads folder
 if not os.path.exists(UPLOAD_FOLDER):
