@@ -250,7 +250,7 @@ def submit_onboarding():
             data.get('personalEmail'), data.get('mobileNumber'), 
             data.get('currentAddress'), data.get('permanentAddress'),
             data.get('city'), data.get('pinCode'), data.get('dateOfJoining'),
-            data.get('department'), data.get('designation'), data.get('reportingManager'),
+            department, data.get('designation'), data.get('reportingManager'),
             data.get('companyName'), data.get('workLocation'), data.get('aadhaarNumber'),
             files_saved['aadhaarFile'], data.get('panNumber'), files_saved['panFile'],
             data.get('accountHolderName'), data.get('bankName'), data.get('accountNumber'),
