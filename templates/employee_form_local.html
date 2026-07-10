@@ -427,19 +427,25 @@
                             <input type="date" name="dateOfJoining" required>
                         </div>
                         <div class="form-group">
-                            <label>Department <span class="required">*</span></label>
-                            <select name="department" required>
-                                <option value="">-- Select Department --</option>
-                                <option value="HR">HR</option>
-                                <option value="IT">IT</option>
-                                <option value="Finance">Finance</option>
-                                <option value="Operations">Operations</option>
-                                <option value="Sales">Sales</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="other">other
-                                    <input type="text" name="Mensioned designation" required>
-                                </option>
-                            </select>
+                        <label>Department <span class="required">*</span></label>
+
+                        <select name="department" id="department" required onchange="toggleOtherDepartment()">
+                        <option value="">-- Select Department --</option>
+                        <option value="HR">HR</option>
+                        <option value="IT">IT</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Operations">Operations</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Other">Other</option>
+                        </select>
+
+                        <input
+                        type="text"
+                        id="otherDepartment"
+                        name="otherDepartment"
+                        placeholder="Please specify your department"
+                        style="display:none; margin-top:10px;">
                         </div>
                         <div class="form-group">
                             <label>Designation <span class="required">*</span></label>
@@ -450,11 +456,11 @@
                             <input type="text" name="reportingManager" required>
                         </div>
                         <div class="form-group">
-                            <label>Company Name <span class="required">*</span></label>
-                            <select name="companyName" required>
+                            <label>Company Name V21 Group <span class="required">*</span></label>
+                            <select name="companyNamev21group" required>
                                 <option value="">-- Select Company --</option>
                                 <option value="V21 Realty">V21 Realty</option>
-                                <option value="V21 Landmarks">Salemax Plus</option>
+                                <option value="Salemax Plus">Salemax Plus</option>
                                 <option value="V21 Landmarks">V21 Landmarks</option>
                                 <option value="V21 Capital">V21 Capital</option>
                                 <option value="Salemax Plus">Salemax Plus</option>
@@ -855,7 +861,19 @@
                 submitBtn.innerHTML = 'Submit Application';
             }
         });
-        
+        function toggleOtherDepartment() {
+            const department = document.getElementById("department");
+            const other = document.getElementById("otherDepartment");
+
+    if (department.value === "Other") {
+        other.style.display = "block";
+        other.required = true;
+    } else {
+        other.style.display = "none";
+        other.required = false;
+        other.value = "";
+    }
+}
         // Initialize
         updateStep();
     </script>
