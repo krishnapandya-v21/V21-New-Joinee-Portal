@@ -227,6 +227,11 @@ def submit_onboarding():
         conn = sqlite3.connect(DATABASE)
         cursor = conn.cursor()
         
+        department = data.get("department")
+
+        if department == "Other":
+            department = data.get("otherDepartment")
+        
         cursor.execute('''
             INSERT INTO employees (
                 employee_code, full_name, gender, dob, blood_group, marital_status,
