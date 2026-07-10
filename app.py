@@ -340,13 +340,10 @@ def internal_error(error):
 # Initialize database when the application starts
 init_database()
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
-    
-    import os
-    port = int(os.environ.get('PORT', 5000))
-    debug = os.environ.get('FLASK_ENV') == 'development'
-    
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    debug = os.environ.get("FLASK_ENV") == "development"
+
     print("\n" + "="*60)
     print("Employee Onboarding Backend Server")
     print("="*60)
@@ -354,5 +351,5 @@ if __name__ == '__main__':
     print(f"Database: {DATABASE}")
     print(f"Upload folder: {UPLOAD_FOLDER}")
     print("="*60 + "\n")
-    
-    app.run(debug=debug, host='0.0.0.0', port=port)
+
+    app.run(host="0.0.0.0", port=port, debug=debug)
